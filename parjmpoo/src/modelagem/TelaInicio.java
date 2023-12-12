@@ -242,6 +242,7 @@ public class TelaInicio extends JPanel implements ActionListener {
 						formainimigoAzul = tempinimigoAzul.getLimites();
 						if (formaTiro.intersects(formainimigoAzul)) {
 							tempTiro.setVisible(false);
+							tempinimigoAzul.setVisible(false);
 							abateInimigoAzul += 1;
 
 						}
@@ -300,6 +301,7 @@ public class TelaInicio extends JPanel implements ActionListener {
 							formainimigoAzul = tempinimigoAzul.getLimites();
 							if (formaTiro2.intersects(formainimigoAzul)) {
 								tempTiro2.setVisible(false);
+								tempinimigoAzul.setVisible(false);
 								abateInimigoAzul += 1;
 
 							}
@@ -400,6 +402,7 @@ public class TelaInicio extends JPanel implements ActionListener {
 								InimigoAzul tempinimigoAzul = horda2.getInimigosAzul().get(i);
 								formainimigoAzul = tempinimigoAzul.getLimites();
 								if (formaTiro2.intersects(formainimigoAzul)) {
+									tempinimigoAzul.setVisible(false);
 									tempTiro2.setVisible(false);
 									abateInimigoAzul += 1;
 
@@ -574,7 +577,7 @@ public class TelaInicio extends JPanel implements ActionListener {
 							formainimigoAzul = tempinimigoAzul.getLimites();
 							if (formaTiro.intersects(formainimigoAzul)) {
 								tempTiro.setVisible(false);
-
+								tempinimigoAzul.setVisible(false);
 								abateInimigoAzul += 1;
 
 							}
@@ -694,7 +697,7 @@ public class TelaInicio extends JPanel implements ActionListener {
 								formainimigoAzul = tempinimigoAzul.getLimites();
 								if (formaTiro2.intersects(formainimigoAzul)) {
 									tempTiro2.setVisible(false);
-
+									tempinimigoAzul.setVisible(false);
 									abateInimigoAzul += 1;
 
 								}
@@ -705,6 +708,7 @@ public class TelaInicio extends JPanel implements ActionListener {
 								if (formaTiro2.intersects(formaInimigoRosa)) {
 									tempinimigoRosa.setVisible(false);
 									tempTiro2.setVisible(false);
+									
 									abateInimigoRosa += 1;
 								}
 							}

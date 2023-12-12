@@ -141,7 +141,7 @@ public class Player2 implements ActionListener {
 
     public void tiroEspecial() {
         this.tiros.add(new AtaquePlayer(this.x, this.y, tiroRef));
-        referencia = new ImageIcon("imagens//NaveVermelhaAtkEspecial.gif");
+        referencia = new ImageIcon("imagens//naveAzulAtkEspecial.gif");
         dadosImagem();
 
     }
@@ -154,7 +154,7 @@ public class Player2 implements ActionListener {
         int codigo = tecla.getKeyCode();
 
         if (codigo == KeyEvent.VK_ENTER) {
-            if (isVisivel) {
+           
                 try {
                     File audioFile = new File("sons//somTiro.wav");
                     AudioInputStream audioStream = AudioSystem.getAudioInputStream(audioFile);
@@ -171,8 +171,9 @@ public class Player2 implements ActionListener {
                     tiroSimples();
                 } else if (qtdAtaquesEspeciais != 0) {
                     tiroEspecial();
+           		   qtdAtaquesEspeciais--;
                 }
-            }
+            
         }
 
         if (codigo == KeyEvent.VK_UP) {

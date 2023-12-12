@@ -165,25 +165,29 @@ public class Player implements ActionListener {
         int codigo = tecla.getKeyCode();
 
         if (codigo == KeyEvent.VK_SPACE) {
+          
+        	   
+        	   try {
+        		   File audioFile = new File("sons//somTiro.wav");
+        		   AudioInputStream audioStream = AudioSystem.getAudioInputStream(audioFile);
+        		   
+        		   clip = AudioSystem.getClip();
+        		   clip.open(audioStream);
+        	   } catch (UnsupportedAudioFileException | LineUnavailableException | IOException e) {
+        		   e.printStackTrace();
+        	   }
+        	   
+        	   playSound();
+        	   
+        	   if (qtdAtaquesEspeciais == 0) {
+        		   tiroSimples();
+        	   } else if (qtdAtaquesEspeciais != 0) {
+        		   
+        		   tiroEspecial();
+        		   qtdAtaquesEspeciais--;
+        	   }
+        	   
            
-                try {
-                    File audioFile = new File("sons//somTiro.wav");
-                    AudioInputStream audioStream = AudioSystem.getAudioInputStream(audioFile);
-
-                    clip = AudioSystem.getClip();
-                    clip.open(audioStream);
-                } catch (UnsupportedAudioFileException | LineUnavailableException | IOException e) {
-                    e.printStackTrace();
-                }
-
-                playSound();
-               
-                if (qtdAtaquesEspeciais == 0) {
-                    tiroSimples();
-                } else if (qtdAtaquesEspeciais != 0) {
-                    tiroEspecial();
-                }
-            
 
         }
 
